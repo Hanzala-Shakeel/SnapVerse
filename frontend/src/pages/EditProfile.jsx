@@ -46,7 +46,7 @@ const EditProfile = () => {
         formData.append("profilePicture", input.profilePicture);
       }
       const res = await axios.post(
-        "http://localhost:3000/user/profile/edit",
+        "https://snapverse-production-9bac.up.railway.app/user/profile/edit",
         formData,
         { withCredentials: true }
       );

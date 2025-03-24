@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   );
 
   const [user, setUser] = useState(
-    () => JSON.parse(localStorage.getItem("user")) || {}
+    () => JSON.parse(localStorage.getItem("user")) || null
   );
 
   const [suggestedUsers, setSuggestedUsers] = useState([]);
@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     // Check if user is authenticated
     axios
-      .get("http://localhost:3000/user/checklogin", {
+      .get("https://snapverse-production-9bac.up.railway.app/user/checklogin", {
         withCredentials: true,
       })
       .then((res) => {

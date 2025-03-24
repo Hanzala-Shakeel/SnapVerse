@@ -16,13 +16,13 @@ import { NotificationContext } from "./context/notificationContext";
 
 const App = () => {
   const { user } = useContext(AuthContext);
-  const { setSocket } = useContext(SocketContext);
+  const { socket, setSocket } = useContext(SocketContext);
   const { setOnlineUsers } = useContext(ChatContext);
   const { handleLikeNotification } = useContext(NotificationContext);
 
   useEffect(() => {
     if (user) {
-      const socketio = io("http://localhost:3000", {
+      const socketio = io("https://snapverse-production-9bac.up.railway.app", {
         query: {
           userId: user?._id,
         },
@@ -43,11 +43,10 @@ const App = () => {
         socketio.close();
         setSocket(null);
       };
+    } else if (!socket) {
+      socket.close();
+      setSocket(null);
     }
-    // else {
-    //   socket.close();
-    //   setSocket(null);
-    // }
   }, [user, setOnlineUsers]);
   // [user, setSocket, setOnlineUsers] "user aur dispatch" patel ne use kiya
 

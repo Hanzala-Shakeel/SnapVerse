@@ -47,7 +47,7 @@ const Sidebar = () => {
   async function logout() {
     try {
       const res = await axios.post(
-        "http://localhost:3000/user/logout",
+        "https://snapverse-production-9bac.up.railway.app/user/logout",
         {},
         { withCredentials: true }
       );

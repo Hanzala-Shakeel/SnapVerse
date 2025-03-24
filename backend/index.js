@@ -14,7 +14,7 @@ console.log(___dirname);
 app.use(express.json());
 
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://snapverse-production-9bac.up.railway.app",
     credentials: true // Allow credentials (cookies) to be included
 }));
 
