@@ -16,13 +16,13 @@ import { toast } from "sonner";
 
 const EditProfile = () => {
   const navigate = useNavigate();
-  const { user, setUser } = useContext(AuthContext);
+  const { user, setUser, userProfile } = useContext(AuthContext);
   const imageRef = useRef();
   const [loading, setLoading] = useState(false);
   const [input, setInput] = useState({
     profilePicture: user.profilePicture,
     bio: user.bio,
-    gender: user?.gender,
+    gender: user.gender,
   });
 
   function fileChangeHandler(e) {

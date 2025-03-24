@@ -52,7 +52,8 @@ const loginUser = async (req, res) => {
             followers: user.followers,
             following: user.following,
             posts: populatedPosts,
-            savedPosts: user.savedPosts
+            savedPosts: user.savedPosts,
+            gender: user.gender
         }
 
         const token = createToken(user); // Generate the token
