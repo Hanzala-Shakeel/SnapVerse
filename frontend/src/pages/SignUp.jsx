@@ -37,8 +37,8 @@ const SignUp = () => {
         navigate("/");
         setIsAuthenticated("true");
         localStorage.setItem("isAuthenticated", "true");
-        localStorage.setItem("user", JSON.stringify(res.data.user));
-        setUser(res.data.user);
+        localStorage.setItem("user", JSON.stringify(res.data.newUser));
+        setUser(res.data.newUser);
       }
     } catch (err) {
       toast.error(err.response.data || err);

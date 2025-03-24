@@ -20,7 +20,7 @@ const registerUser = async (req, res) => {
             sameSite: 'strict', // Helps prevent CSRF attacks
             maxAge: 1 * 24 * 60 * 60 * 1000
         });
-        res.status(201).send({ message: "Account created successfully", user });
+        res.status(201).send({ message: "Account created successfully", newUser });
     } catch (err) {
         res.status(500).send(err.message);
     }
