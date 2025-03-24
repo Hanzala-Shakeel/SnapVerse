@@ -16,7 +16,7 @@ import { toast } from "sonner";
 
 const EditProfile = () => {
   const navigate = useNavigate();
-  const { user, setUser, userProfile } = useContext(AuthContext);
+  const { user, setUser } = useContext(AuthContext);
   const imageRef = useRef();
   const [loading, setLoading] = useState(false);
   const [input, setInput] = useState({
@@ -116,7 +116,7 @@ const EditProfile = () => {
           <div>
             <h1 className="text-lg font-medium">Gender</h1>
             <Select
-              defaultValue={input.gender}
+              defaultValue={input.gender && ""}
               onValueChange={selectChangeHandler}
             >
               <SelectTrigger className="mt-3 w-full bg-transparent outline-none border border-zinc-700 py-7 text-md rounded-xl">
