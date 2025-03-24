@@ -35,7 +35,7 @@ const Sidebar = () => {
     {
       icon: (
         <Avatar className="w-6 h-6 rounded-full overflow-hidden">
-          <AvatarImage src={user.profilePicture} />
+          <AvatarImage className="object-cover" src={user.profilePicture} />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
       ),
