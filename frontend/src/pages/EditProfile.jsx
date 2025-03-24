@@ -22,7 +22,7 @@ const EditProfile = () => {
   const [input, setInput] = useState({
     profilePicture: user.profilePicture,
     bio: user.bio,
-    gender: user.gender,
+    gender: user.gender && "",
   });
 
   function fileChangeHandler(e) {
@@ -116,7 +116,7 @@ const EditProfile = () => {
           <div>
             <h1 className="text-lg font-medium">Gender</h1>
             <Select
-              defaultValue={input.gender && ""}
+              defaultValue={input.gender}
               onValueChange={selectChangeHandler}
             >
               <SelectTrigger className="mt-3 w-full bg-transparent outline-none border border-zinc-700 py-7 text-md rounded-xl">
