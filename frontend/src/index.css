@@ -8,10 +8,13 @@
 @tailwind utilities;
 *{
   font-family: "Roboto", serif;
+  user-select: none;
+  -webkit-user-drag: none; /* Disable image dragging in WebKit browsers */
 }
 .logo {
   font-family: "Fontspring";
 }
+
 /* *::-webkit-scrollbar{
   background-color: gray;
 } */
