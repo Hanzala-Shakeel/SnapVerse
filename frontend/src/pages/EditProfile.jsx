@@ -22,7 +22,7 @@ const EditProfile = () => {
   const [input, setInput] = useState({
     profilePicture: user.profilePicture,
     bio: user.bio,
-    gender: user?.gender || "",
+    gender: user?.gender,
   });
 
   function fileChangeHandler(e) {
