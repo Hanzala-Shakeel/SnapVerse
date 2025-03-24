@@ -73,7 +73,7 @@ const EditProfile = () => {
           <div className="flex justify-between items-center w-[638px] max-sm:w-full bg-[#262626] p-5 rounded-xl">
             <div className="flex items-center gap-3">
               <Avatar className="w-[60px] h-[60px] rounded-full">
-                <AvatarImage src={user.profilePicture} />
+                <AvatarImage className="object-cover" src={user.profilePicture} />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
               <div className="flex flex-col font-medium">
