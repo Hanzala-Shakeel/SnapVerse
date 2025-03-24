@@ -20,7 +20,7 @@ const registerUser = async (req, res) => {
             sameSite: 'strict', // Helps prevent CSRF attacks
             maxAge: 1 * 24 * 60 * 60 * 1000
         });
-        res.status(201).send("Account created successfully");
+        res.status(201).send({ message: "Account created successfully", user });
     } catch (err) {
         res.status(500).send(err.message);
     }
@@ -146,7 +146,7 @@ const getSuggestedUser = async (req, res) => {
 
         // Exclude users that the current user is already following
         const suggestedUsers = await userModel
-            .find({ 
+            .find({
                 _id: { $ne: userId, $nin: currentUser.following } // Exclude the current user and already followed users
             })
             .select("-password") // Exclude the password field

@@ -8,7 +8,7 @@ import { AuthContext } from "../context/authContext";
 const SignUp = () => {
   const navigate = useNavigate();
 
-  const { setIsAuthenticated } = useContext(AuthContext);
+  const { setIsAuthenticated, setUser } = useContext(AuthContext);
 
   const [formData, setFormData] = useState({
     username: "",
@@ -33,10 +33,12 @@ const SignUp = () => {
         { withCredentials: true }
       );
       if (res) {
-        toast.success(res.data);
+        toast.success(res.data.message);
         navigate("/");
-        localStorage.setItem("isAuthenticated", "true");
         setIsAuthenticated("true");
+        localStorage.setItem("isAuthenticated", "true");
+        localStorage.setItem("user", JSON.stringify(res.data.user));
+        setUser(res.data.user);
       }
     } catch (err) {
       toast.error(err.response.data || err);
