@@ -32,7 +32,7 @@ const SignUp = () => {
         formData,
         { withCredentials: true }
       );
-      if (res) {
+      if (res.status === 201) {
         toast.success(res.data.message);
         navigate("/");
         setIsAuthenticated("true");
