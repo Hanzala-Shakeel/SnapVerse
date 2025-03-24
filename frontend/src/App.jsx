@@ -44,7 +44,7 @@ const App = () => {
         setSocket(null);
       };
     } else if (!socket) {
-      socket.close();
+      socket?.close();
       setSocket(null);
     }
   }, [user, setOnlineUsers]);
